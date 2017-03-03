@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+    <style>
+      .ui-label {
+        width: 1.4rem;
+      }
+    </style>
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">City Picker</h1>
+    </header>
+
+    
+    <div class="ui-cells ui-cells-form">
+      <div class="ui-cell">
+        <div class="ui-cell-hd"><label for="name" class="ui-label">发出地</label></div>
+        <div class="ui-cell-bd ui-cell-primary">
+          <input class="ui-input" id="start" type="text" value="湖北省 武汉市 武昌区">
+        </div>
+      </div>
+      <div class="ui-cell">
+        <div class="ui-cell-hd"><label for="date" class="ui-label">目的地</label></div>
+        <div class="ui-cell-bd ui-cell-primary">
+          <input class="ui-input" id="end" type="text" value="">
+        </div>
+      </div>
+    </div>
+
+    <h2 class="demos-second-title">只选择城市</h2>
+    <div class="ui-cells ui-cells-form">
+      <div class="ui-cell">
+        <div class="ui-cell-hd"><label for="home-city" class="ui-label">城市</label></div>
+        <div class="ui-cell-bd ui-cell-primary">
+          <input class="ui-input" id="home-city" type="text">
+        </div>
+      </div>
+    </div>
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+    <script src="../js/city-picker.js"></script>
+
+    <script>
+      $("#start").cityPicker({
+        title: "选择出发地",
+        onChange: function (picker, values, displayValues) {
+          console.log(values, displayValues);
+        }
+      });
+      $("#end").cityPicker({
+        title: "选择目的地"
+      });
+      $("#home-city").cityPicker({
+        title: "选择目的地",
+        showDistrict: false,
+        onChange: function (picker, values, displayValues) {
+          console.log(values, displayValues);
+        }
+      });
+    </script>
+  </body>
+</html>

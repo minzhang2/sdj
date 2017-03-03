@@ -1,0 +1,72 @@
+.ui-tab {
+    overflow: hidden;
+    .ui-tab-nav {
+        position: relative;
+        -webkit-align-self: center;
+        align-self: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-lines: single;
+        -moz-box-lines: single;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        background: #fff;
+        box-sizing: border-box;
+        z-index: 20;
+        .hairline(bottom, @color-hairline);
+    }
+    &.fixed {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    &.fixed .ui-tab-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 99;
+    }
+    &.fixed .ui-tab-content {
+        position: absolute;
+        top: 42px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    &.fixed .ui-tab-item.active {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        .scrollable;
+    }
+    .ui-tab-nav .ui-tab-link {
+        position: relative;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 40px;
+        line-height: 42px;
+        border-bottom: 2px solid transparent;
+        color: #000;
+        font-size: 15px;
+        text-align: center;
+    }
+    .ui-tab-nav .ui-tab-link.active {
+        color: @color-primary;
+        border-color: @color-primary;
+        z-index: 100
+    }
+    .ui-tab-content .ui-tab-item {
+        display: none;
+    }
+    .ui-tab-content .ui-tab-item.active {
+        display: block
+    }
+}

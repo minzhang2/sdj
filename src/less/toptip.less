@@ -1,0 +1,25 @@
+.ui-toptips {
+    z-index: 100;
+    opacity: 0;
+    transition: opacity .3s;
+    &.ui-toptips-visible {
+        opacity: 1;
+    }
+}
+
+.ui-toptips {
+    display: none;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    width: 100%;
+    top: 0;
+    line-height: 2.3;
+    font-size: 14px;
+    text-align: center;
+    color: #FFF;
+    z-index: 50000;
+}
+
+.ui-toptips.ui-warn {
+    background-color: #E64340;
+}

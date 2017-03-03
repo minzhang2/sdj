@@ -1,0 +1,63 @@
+.ui-dialog {
+    padding-top: 15px;
+    z-index: 1000;
+    width: 270px;
+    height: auto;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.ui-dialog-confirm .ui-dialog .ui-dialog-hd {
+    padding: 1.2em 20px .5em;
+    text-align: left;
+}
+
+.ui-dialog-hd {
+    padding: 6px 15px 15px;
+}
+
+.ui-dialog-title {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.ui-dialog-bd {
+    padding: 0 15px 15px;
+    font-size: 13px;
+    color: #333;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.ui-dialog-ft {
+    position: relative;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    .hairline(top, @color-hairline);
+    .ui-btn-dialog {
+        display: block;
+        height: 42px;
+        line-height: 42px;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        color: @color-primary;
+    }
+}
+
+.ui-dialog-confirm .ui-dialog-ft .ui-btn-dialog {
+    position: relative;
+    .hairline(left, @color-hairline);
+    &:first-child:after {
+        display: none;
+    }
+}
+
+//.ui-btn-dialog.default,
+//.ui-btn-dialog.primary {
+//    color: @color-primary;
+//}

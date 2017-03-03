@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+        <style>
+
+        </style>
+</head>
+
+<body ontouchstart>
+
+    <div id="tab" class="ui-tab fixed">
+        <div class="ui-tab-nav">
+            <div class="ui-tab-link active" data-href="tab1">已付款</div>
+            <div class="ui-tab-link" data-href="tab2">待付款</div>
+        </div>
+        <div class="ui-tab-content">
+            <div id="tab1" class="ui-tab-item ui-pull-to-refresh active">
+                <div class="ui-pull-to-refresh-layer">
+                    <div class='pull-to-refresh-arrow'></div>
+                    <div class='pull-to-refresh-preloader'></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新</div>
+                </div>
+                <div class="list"></div>
+                <div class="ui-infinite-scroll ui-hide">
+                    <div class="infinite-preloader"></div>
+                    正在加载
+                </div>
+            </div>
+            <div id="tab2" class="ui-tab-item ui-pull-to-refresh">
+                <div class="ui-pull-to-refresh-layer">
+                    <div class='pull-to-refresh-arrow'></div>
+                    <div class='pull-to-refresh-preloader'></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新</div>
+                </div>
+                <div class="list"></div>
+                <div class="ui-infinite-scroll ui-hide">
+                    <div class="infinite-preloader"></div>
+                    正在加载
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+        <script id="listTpl" type="text/html">
+            {{each $data.list as value index}}
+            <div class="ui-cells">
+                <div class="ui-cell">
+                    <div class="ui-cell-bd ui-cell-primary">
+                        <p>衣服</p>
+                    </div>
+                    <div class="ui-cell-ft">{{index}}元</div>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+        <script>
+            ;
+            (function() {
+                var $tab = $('#tab'),
+                    $tabContent = $tab.find('.ui-tab-content'),
+                    $tabItem = $tab.find('.ui-tab-item');
+
+                // 数据模型
+                var model = {
+                    tabIndex: 0,
+                    list: [{
+                        ele: $('#tab1 .list'), // 当前的dom
+                        data: [], // 列表的数据
+                        firstLoad: true, // 是否为地一次加载
+                        current: 0, // 当前页码
+                        loading: false, // 是否正在滚动加载
+                        canInfinite: true, // 是否可以进行滚动加载
+                    }, {
+                        ele: $('#tab2 .list'), // 当前的dom
+                        data: [], // 列表的数据
+                        firstLoad: true, // 是否为地一次加载
+                        current: 0, // 当前页码
+                        loading: false, // 是否正在滚动加载
+                        canInfinite: true, // 是否可以进行滚动加载
+                    }],
+                }
+
+                var main = {};
+
+                main.init = function() {
+                    main.addEvent();
+                    main.render();
+                };
+
+                main.render = function() {
+                    main.getListData();
+                };
+
+                main.getListData = function(refresh) {
+                    var currentModel = model.list[model.tabIndex],
+                        $currentItem = currentModel.ele.parent(),
+                        infinite = $currentItem.data('infinite');
+
+                    var data = {
+                        lastPage: false,
+                        firstPage: true,
+                        list: new Array(15),
+                    };
+
+                    // 无限加载不需要加载提示
+                    if (currentModel.firstLoad) {
+                        $.showIndicator();
+                    }
+
+                    if (refresh) { // 下拉刷新自动将页码置为0
+                        currentModel.current = 0;
+                    }
+                    
+                    setTimeout(function() {
+                        console.log($currentItem.attr('id') + '加载数据');
+                        
+                        if (currentModel.firstLoad) { // 第一次加载
+                            $.hideIndicator();
+                            main.renderList(currentModel.ele, data, true);
+
+                            currentModel.firstLoad = false;
+
+                            if (data.lastPage) {
+                                // 加载完毕，则注销无限加载事件，以防不必要的加载
+                                infinite.detachEvents();
+                                currentModel.canInfinite = false;
+                            }else {
+                                currentModel.ele.next().removeClass('ui-hide');
+                            }
+
+                        } else {
+                            if (refresh) { // 下拉刷新
+                                main.renderList(currentModel.ele, data, true);
+
+                                if (!data.lastPage && !currentModel.canInfinite) { // 不是最后一页并且不能进行滚动加载
+                                    // 重新绑定无限加载事件
+                                    infinite.attachEvents();
+                                    currentModel.canInfinite = true;
+                                } else if (data.lastPage && currentModel.canInfinite) { // 是最后一页并且可以进行滚动加载
+                                    // 加载完毕，则注销无限加载事件，以防不必要的加载
+                                    infinite.detachEvents();
+                                    currentModel.canInfinite = false;
+                                }
+                                
+                                $currentItem.pullToRefreshDone();
+
+                            } else { // 滚动加载
+                                main.renderList(currentModel.ele, data);
+
+                                // 重置加载flag
+                                currentModel.loading = false;
+
+                                if (data.lastPage) {
+                                    // 加载完毕，则注销无限加载事件，以防不必要的加载
+                                    infinite.detachEvents();
+                                    currentModel.canInfinite = false;
+                                }
+                            }
+                        }
+                    }, 1000);
+
+                };
+
+                main.renderList = function(ele, data, refresh) {
+
+                    // 刷新列表
+                    if (refresh) {
+                        ele.empty();
+                    }
+
+                    ele.append($.template("listTpl", data));
+
+                    // 图片懒加载
+                    //                    $.lazyLoad.init({
+                    //                        parent: ele,
+                    //                        className: 'lazy',
+                    //                    });
+
+                };
+
+                main.addEvent = function() {
+                    // tab切换
+                    $tab.on('click', '.ui-tab-link', main.eventHandle.tabEvent);
+                    // 下拉刷新
+                    $tabItem.pullToRefresh().on("pull-to-refresh", main.eventHandle.refreshEvent);
+                    // 滚动加载
+                    $tabItem.infinite().on("infinite", main.eventHandle.infiniteEvent);
+                }
+
+                main.eventHandle = {
+                    // tab切换
+                    tabEvent: function(e) {
+                        e.preventDefault();
+                        var $this = $(this);
+                        model.tabIndex = $this.index();
+                        
+                        $.showTab($this.data('href'), $this);
+                        
+                        // 首次切换到第二个tab进行数据加载
+                        if( model.tabIndex === 1 && model.list[model.tabIndex].firstLoad)  main.getListData();
+                    },
+                    // 下拉刷新
+                    refreshEvent: function() {
+                        
+                        
+                        main.getListData(true);
+                    },
+                    // 滚动加载
+                    infiniteEvent: function() {
+                        var currentModel = model.list[model.tabIndex];
+                        if (currentModel.loading) return;
+                        currentModel.loading = true;
+                        main.getListData();
+                    }
+                };
+
+                $(function() {
+                    main.init();
+                });
+
+            })();
+        </script>
+</body>
+
+</html>

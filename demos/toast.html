@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sdj ui</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">Toast</h1>
+    </header>
+
+    <div class='demos-content-padded'>
+      <a href="javascript:;" id='show-toast' class="ui-btn">显示 Toast 成功</a>
+      <a href="javascript:;" id='show-toast-cancel' class="ui-btn">显示 Toast 取消</a>
+      <a href="javascript:;" id='show-toast-text' class="ui-btn">显示 Toast 纯文本</a>
+      <a href="javascript:;" id='show-loading' class="ui-btn">显示 Loading</a>
+      <a href="javascript:;" id='show-indicator' class="ui-btn">显示 showIndicator</a>
+    </div>
+    <% include _foot.html %>
+    <script>
+      $(document).on('click', '#show-toast', function() {
+        $.toast('操作成功', 'success', function() {
+          console.log('close');
+        });
+      })
+      .on('click', '#show-toast-cancel', function() {
+        $.toast('取消操作', 'error', function(toast) {
+          console.log(toast);
+        });
+      })
+      .on("click", "#show-toast-text", function() {
+        $.toast('纯文本');
+      })
+      .on("click", "#show-loading", function() {
+        $.showLoading();
+
+        setTimeout(function() {
+          $.hideLoading();
+        }, 3000)
+      }).on("click", "#show-indicator", function() {
+        $.showIndicator();
+        setTimeout(function() {
+          $.hideIndicator();
+        }, 3000)
+      });
+    </script>
+  </body>
+</html>

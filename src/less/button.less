@@ -1,0 +1,59 @@
+.ui-btn {
+    width: 100%;
+    display: inline-block;
+    outline: 0 none;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    color: #000;
+    background-color: #fff;
+    border: 0.5px solid @color-hairline;
+    &.ui-btn-disabled {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.ui-btn-primary {
+    background-color: @color-btn-primary;
+    color: #fff;
+    &.ui-btn-disabled {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.ui-btn-disabled {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ui-btn:not(.ui-btn-disabled).active {
+    .highlight;
+}
+
+.ui-btn:not(.ui-btn-disabled).ui-btn-primary.active {
+    .highlight(@color-btn-primary-active);
+}
+
+.ui-btn:not(.ui-btn-primary).ui-btn-disabled {
+    color: #bbb;
+    background-color: @color-hairline;
+    border: 0;
+}
+
+.ui-btn-inline {
+    width: auto;
+    padding: 0 15px;
+}
+
+.ui-btn-small {
+    font-size: 12px;
+    height: 23px;
+    line-height: 23px;
+    -webkit-background-clip: padding-box;
+    padding: 0 6px;
+}

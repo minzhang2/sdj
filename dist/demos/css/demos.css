@@ -1,0 +1,46 @@
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.demos-title {
+  text-align: center;
+  font-size: 0.68rem;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%;
+}
+
+.demos-sub-title {
+  text-align: center;
+  color: #888;
+}
+
+.demos-header {
+  padding: 0.7rem 0;
+}
+
+.demos-content-padded {
+  padding: 0.3rem;
+}
+
+.demos-second-title {
+  text-align: center;
+  font-size: 0.48rem;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%;
+}
+
+footer {
+  text-align: center;
+  padding: 0.4rem;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+.ui-btn {
+    margin: 0.15rem 0
+}

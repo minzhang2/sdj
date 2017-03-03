@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sdj ui</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">Device</h1>
+    </header>
+
+    <% include _foot.html %>
+    <script>
+        $(function() {
+            alert(JSON.stringify($.device));
+        });
+    </script>
+  </body>
+</html>

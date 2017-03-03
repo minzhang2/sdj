@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sdj ui</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">列表</h1>
+    </header>
+
+    <div class="bd">
+      <div class="ui-cells-title">带说明的列表项</div>
+      <div class="ui-cells">
+        <div class="ui-cell">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>标题文字</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </div>
+      </div>
+      <div class="ui-cells-title">带图标、说明的列表项</div>
+      <div class="ui-cells">
+        <div class="ui-cell">
+          <div class="ui-cell-hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" width="20"></div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>标题文字</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </div>
+        <div class="ui-cell">
+          <div class="ui-cell-hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" width="20"></div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>标题文字</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </div>
+      </div>
+
+      <div class="ui-cells-title">带跳转的列表项</div>
+      <div class="ui-cells ui-cells-access">
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">
+          </div>
+        </a>
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">
+          </div>
+        </a>
+      </div>
+
+      <div class="ui-cells-title">带说明、跳转的列表项</div>
+      <div class="ui-cells ui-cells-access">
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </a>
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </a>
+
+      </div>
+
+      <div class="ui-cells-title">带图标、说明、跳转的列表项</div>
+      <div class="ui-cells ui-cells-access">
+
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" width="20"></div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </a>
+        <a class="ui-cell" href="javascript:;">
+          <div class="ui-cell-hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" width="20"></div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">说明文字</div>
+        </a>
+      </div>
+
+      <div class="ui-cells-title">单选列表项</div>
+      <div class="ui-cells ui-cells-radio">
+        <label class="ui-cell ui-check-label" for="x11">
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">
+            <input type="radio" class="ui-check" name="radio1" id="x11">
+            <span class="ui-icon-checked"></span>
+          </div>
+        </label>
+        <label class="ui-cell ui-check-label" for="x12">
+
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>cell standard</p>
+          </div>
+          <div class="ui-cell-ft">
+            <input type="radio" name="radio1" class="ui-check" id="x12" checked="checked">
+            <span class="ui-icon-checked"></span>
+          </div>
+        </label>
+      </div>
+      <div class="ui-cells-title">复选列表项</div>
+      <div class="ui-cells ui-cells-checkbox">
+        <label class="ui-cell ui-check-label" for="s11">
+          <div class="ui-cell-hd">
+            <input type="checkbox" class="ui-check" name="checkbox1" id="s11" checked="checked">
+            <i class="ui-icon-checked"></i>
+          </div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>standard is dealt for u.</p>
+          </div>
+        </label>
+        <label class="ui-cell ui-check-label" for="s12">
+          <div class="ui-cell-hd">
+            <input type="checkbox" name="checkbox1" class="ui-check" id="s12">
+            <i class="ui-icon-checked"></i>
+          </div>
+          <div class="ui-cell-bd ui-cell-primary">
+            <p>standard is dealicient for u.</p>
+          </div>
+        </label>
+      </div>
+
+    </div>
+    <% include _foot.html %>
+  </body>
+</html>

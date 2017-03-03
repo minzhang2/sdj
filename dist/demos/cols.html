@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">12栏栅格</h1>
+    </header>
+
+    <style>
+      .ui-row {
+        margin-top: 0.2rem;
+      }
+      [class*="ui-col-"] {
+        border: 1px solid #ccc;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        text-align: center;
+      }
+
+    </style>
+
+    <h2 class='doc-head'>有间距</h2>
+
+    <div class="ui-row">
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+    </div>
+
+    <div class="ui-row">
+      <div class="ui-col-33">33</div>
+      <div class="ui-col-33">33</div>
+      <div class="ui-col-33">33</div>
+    </div>
+
+    <div class="ui-row">
+      <div class="ui-col-50">50</div>
+      <div class="ui-col-50">50</div>
+    </div>
+
+
+    <h2 class='doc-head'>无间距</h2>
+
+    <div class="ui-row ui-no-gutter">
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+      <div class="ui-col-20">20</div>
+    </div>
+
+    <div class="ui-row ui-no-gutter">
+      <div class="ui-col-33">33</div>
+      <div class="ui-col-33">33</div>
+      <div class="ui-col-33">33</div>
+    </div>
+
+    <div class="ui-row ui-no-gutter">
+      <div class="ui-col-50">50</div>
+      <div class="ui-col-50">50</div>
+    </div>
+
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+  </body>
+</html>

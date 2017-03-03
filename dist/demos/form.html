@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+</head>
+
+<body ontouchstart>
+
+
+    <header class='demos-header'>
+        <h1 class="demos-title">表单</h1>
+    </header>
+
+    <div class="ui-list">
+        <div class="ui-list-body">
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-required ui-input-label-2">标题</div>
+                <div class="ui-input-control">
+                    <input type="text" placeholder="请输入" data-seed="logId">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">标题</div>
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="输入会显示清除按钮">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="无 label">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">
+                    <div style="background-image: url(&quot;https://os.alipayobjects.com/rmsportal/zumwvwrngNMGSWe.png&quot;); background-size: cover; height: 0.44rem; width: 0.44rem;"></div>
+                </div>
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="标题可自定义">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-3">标题过长</div>
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="限制标题显示的长度">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">价格</div>
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="0.00">
+                </div>
+                <div class="ui-input-extra">元</div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">上传照片</div>
+                <div class="ui-input-control">
+                    <input type="text" value="" placeholder="">
+                </div>
+                <div class="ui-input-extra"><img src="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png"></div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">银行卡</div>
+                <div class="ui-input-control">
+                    <input type="tel" value="8888 8888 8888 8888" placeholder="">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">手机号码</div>
+                <div class="ui-input-control">
+                    <input type="tel" value="" placeholder="186 1234 1234">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">密码</div>
+                <div class="ui-input-control">
+                    <input type="password" value="" placeholder="****">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">数字键盘</div>
+                <div class="ui-input-control">
+                    <input type="text" pattern="[0-9]*" value="" placeholder="点击会弹出数字键盘">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item">
+                <div class="ui-input-label ui-input-label-4">姓名</div>
+                <div class="ui-input-control">
+                    <input type="text" value="不可编辑" placeholder="" readonly="">
+                </div>
+            </div>
+            <div class="ui-list-item ui-input-item ui-input-disabled">
+                <div class="ui-input-label ui-input-label-4">姓名</div>
+                <div class="ui-input-control">
+                    <input type="text" value="这个是禁用状态的样式" disabled="" placeholder="">
+                </div>
+            </div>
+            <div class="ui-list-item ui-list-item-middle">
+                <div class="ui-list-line">
+                    <div class="ui-list-content ui-input-label-2">省市区选择</div>
+                    <div class="ui-list-extra">安徽省,安庆市,潜山县</div>
+                    <div class="ui-list-arrow ui-list-arrow-horizontal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-list-body">
+        <div class="ui-list-item ui-textarea-item ui-textarea-error">
+            <div class="ui-textarea-label ui-textarea-label-4">报错样式</div>
+            <div class="ui-textarea-control">
+                <textarea maxlength="100" rows="5" placeholder="">报错样式</textarea>
+            </div>
+            <div class="ui-textarea-error-extra"></div><span class="ui-textarea-count"><span>4</span>
+            </span>
+        </div>
+        <div class="ui-list-item ui-textarea-item ui-textarea-item-single-line">
+            <div class="ui-textarea-control">
+                <textarea maxlength="10" placeholder="最多输入10个字符" rows="1"></textarea>
+            </div>
+        </div>
+        <div class="ui-list-item ui-textarea-item">
+            <div class="ui-textarea-control">
+                <textarea maxlength="100" rows="5" placeholder="">计数功能,我的意见是...</textarea>
+            </div><span class="ui-textarea-count"><span>13</span>
+            </span>
+        </div>
+        <div class="ui-list-item ui-textarea-item">
+            <div class="ui-textarea-label ui-textarea-label-5">高度自适应</div>
+            <div class="ui-textarea-control">
+                <textarea placeholder="" rows="1" style="height: 44px;"></textarea>
+            </div>
+        </div>
+        <div class="ui-list-item ui-textarea-item">
+            <div class="ui-textarea-control">
+                <textarea rows="3" placeholder="固定行数,rows"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ui-list">
+        <div class="ui-list-body">
+            <div class="ui-uploader">
+                <div class=" ui-list-item ui-uploader-header">图片上传</div>
+                <div class="ui-uploader-content ui-clearfix">
+                    <div class="ui-uploader-item">
+                        <div class="ui-uploader-item-content">
+                            <div class="ui-uploader-remove ui-icon-clear"></div>
+                            <img class="ui-uploader-img" src="http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/">
+                        </div>
+                    </div>
+                    <div class="ui-uploader-item">
+                        <div class="ui-uploader-item-content">
+                            <div class="ui-uploader-remove ui-icon-clear"></div>
+                            <img class="ui-uploader-img" src="http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/">
+                        </div>
+                    </div>
+                    <div class="ui-uploader-item">
+                        <div class="ui-uploader-item-content">
+                            <div class="ui-uploader-remove ui-icon-clear"></div>
+                            <img class="ui-uploader-img" src="http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/">
+                        </div>
+                    </div>
+                    <div class="ui-uploader-item">
+                        <div class="ui-uploader-item-content ui-uploader-btn">
+                            <input id="upload" class="ui-uploader-input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+
+        <script>
+            $("#showTooltips").click(function() {
+                var tel = $('#tel').val();
+                var code = $('#code').val();
+                if (!tel || !/1[3|4|5|7|8]\d{9}/.test(tel)) $.toptip('请输入手机号');
+                else if (!code || !/\d{6}/.test(code)) $.toptip('请输入六位手机验证码');
+                else $.toptip('提交成功', 'success');
+            });
+        </script>
+</body>
+
+</html>

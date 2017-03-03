@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+</head>
+
+<body ontouchstart>
+
+
+    <header class='demos-header'>
+        <h1 class="demos-title">Picker</h1>
+    </header>
+
+
+    <div class="ui-list-item ui-list-item-middle">
+        <div class="ui-list-line">
+            <div class="ui-list-content ui-input-label-2">手机号</div>
+            <div class="ui-list-extra">
+                <input id="mobile" type="text" placeholder="请输入">
+            </div>
+            <div class="ui-list-arrow ui-list-arrow-horizontal"></div>
+        </div>
+    </div>
+
+    <div class="ui-list-item ui-list-item-middle">
+        <div class="ui-list-line">
+            <div class="ui-list-content ui-input-label-2">称呼</div>
+            <div class="ui-list-extra">
+                <input id="name" type="text" placeholder="请输入">
+            </div>
+            <div class="ui-list-arrow ui-list-arrow-horizontal"></div>
+        </div>
+    </div>
+    
+    <div id="picker-container"></div>
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+
+        <script>
+            $("#mobile").picker({
+                title: "请选择您的手机",
+                cols: [{
+                    textAlign: 'center',
+                    values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+                }],
+                onChange: function(p, v, dv) {
+                    console.log(p, v, dv);
+                },
+                onClose: function(p, v, d) {
+                    console.log("close");
+                }
+            });
+            $("#name").picker({
+                title: "怎么称呼您？",
+                cols: [{
+                    textAlign: 'center',
+                    values: ['Mr', 'Ms']
+                }, {
+                    textAlign: 'center',
+                    values: ['Amy', 'Bob', 'Cat', 'Dog', 'Ella', 'Fox', 'Google']
+                }]
+            });
+        </script>
+</body>
+
+</html>

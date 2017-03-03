@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdj ui</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="../lib/common.js"></script>
+<link rel="stylesheet" href="../css/sdj-ui.css">
+<link rel="stylesheet" href="css/demos.css">
+</head>
+
+<body ontouchstart>
+
+
+    <header class='demos-header'>
+        <h1 class="demos-title">上传图片</h1>
+    </header>
+
+    <div class="ui-list">
+        <div class="ui-list-body">
+            <div id="upload" class="ui-uploader">
+                <div class=" ui-list-item ui-uploader-header">图片上传</div>
+                <div class="ui-uploader-content ui-clearfix">
+<!--
+<div class="ui-uploader-item">
+    <div class="ui-uploader-item-content">
+        <div class="ui-uploader-remove"></div>
+        <img class="ui-uploader-img" src="http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/">
+    </div>
+</div>
+-->
+                    <div class="ui-uploader-item ui-upload-btn-wrap">
+                        <div class="ui-uploader-item-content ui-uploader-btn">
+                            <input class="ui-uploader-input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="box"></div>
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../js/sdj-ui.js"></script>
+        <script>
+            window.BASE = location.host;
+            window.CONTEXTPATH = '/sdj-saas/platform';
+            $(function() {
+                $('#upload').upload({
+                    fileList: [{
+                        uid: Date.now(),
+                        url: 'https://image.shuangdj.com/e786df7f993c48b598ef3406104e081b',
+                    }],
+                    action: CONTEXTPATH + '/image/upload',
+                    beforeUpload: function(file) {
+                        console.log(1)
+                    }, //function 上传前
+                    uploadProgress: function(file) {
+                        console.log(2)
+                    }, // function 上传进行中
+                    uploadComplete: function(file) {
+                        console.log(3)
+                    }, //function 上传完成
+                    uploadError: function(data) {
+                        console.log(4)
+                    }, //function 上传失败
+                });
+            });
+        </script>
+</body>
+
+</html>
